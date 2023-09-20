@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/Navbar.css">
+  <link rel="stylesheet" href="styles/Main.css">
+  <link rel="stylesheet" href="styles/Feature.css">
+  <link rel="stylesheet" href="styles/Newsletter.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+  <title>Dlex</title>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="navbar__backdrop"></div>
+    <div class="navbar__inner-container container">
+      <img class="navbar__logo" src="assets/Navbar/logo.svg" alt="Dlex logo">
+      <div class="navbar__offcanvas">
+        <div class="navbar__offcanvas-header">
+          <button class="navbar__offcanvas-close-button">
+            <img class="navbar__toggle-icon" src="assets/Navbar/close-icon.svg" alt="close-icon">
+          </button>
+        </div>
+        <nav class="navbar__offcanvas-body">
+          <ul class="navbar__offcanvas-list">
+            <li class="navbar__offcanvas-item">Product</li>
+            <li class="navbar__offcanvas-item">Features</li>
+            <li class="navbar__offcanvas-item">Marketplace</li>
+            <li class="navbar__offcanvas-item">Company</li>
+          </ul>
+          <div class="navbar__offcanvas-buttons-wrapper">
+            <button class="navbar__offcanvas-sign-button navbar__offcanvas-sign-button_transparent">Sign In</button>
+            <button class="navbar__offcanvas-sign-button">Sign Up</button>
+          </div>
+        </nav>
+      </div>
+      <button class="navbar__menu-button">
+        <img src="assets/Navbar/menu-hamburger.svg" alt="">
+      </button>
+    </div>
+  </header>
+  <main class="main container">
+    <header class="main__header">
+      <h1 class="main__header-title">Have no fear of perfection, <br> you'll never reach it.</h1>
+      <p class="main__header-subtitle">Create interactive user flow diagrams that tell a story.
+      </p>
+      <img class="main__memoji-icon" src="assets/Main/memoji-icon.svg" alt="memoji-icon">
+      <img class="main__sector-icon" src="assets/Main/sector-icon.svg" alt="sector-icon">
+    </header>
+    <div class="main__img-wrapper">
+      <img class="main__img-play-button" src="assets/Main/play-button.svg" alt="play-button">
+      <img class="main__img" src="assets/Main/video.svg" alt="video">
+      <img class="main__voucher-icon" src="assets/Main/voucher-icon.svg" alt="voucher-icon">
+      <img class="main__sent-icon" src="assets/Main/sent-icon.svg" alt="sent-icon">
+      <img class="main__send-icon" src="assets/Main/send-icon.svg" alt="send-icon">
+    </div>
+  </main>
+  <section class="feature container">
+    <header class="feature__header">
+      <h1 class="feature__header-title">Startup Mobile Apps & Completed design system</h1>
+      <p class="feature__header-subtitle">A complete design system with 70 pre-built screens for mobile apps to enable
+        you to kick-off your mobile app
+        design.</p>
+      <button class="feature__button">
+        <p class="feature__button-text">Get it Now</p>
+        <img class="feature__button-icon" src="assets/Feature/arrow-right.svg" alt="arrow-right-icon">
+      </button>
+    </header>
+    <aside class="feature__iphone-aside">
+      <div class="feature__iphone-wrapper">
+        <img class="feature__iphone-body" src="assets/Feature/iphone-body.svg" alt="iphone-body">
+        <img class="feature__iphone-screen" src="assets/Feature/iphone-screen.svg" alt="iphone-screen">
+      </div>
+      <img class="feature__cart-img" src="assets/Feature/cart-img.svg" alt="cart-image">
+      <img class="feature__aside-img" src="assets/Feature/aside-img.svg" alt="aside-image">
+      <img class="feature__gray-ellipse" src="assets/Feature/gray-ellipse.svg" alt="gray-ellipse">
+      <img class="feature__blue-ellipse" src="assets/Feature/blue-ellipse.svg" alt="blue-ellipse">
+    </aside>
+  </section>
+  <div class="newsletter-background">
+    <section class="newsletter container">
+      <header class="newsletter__header">
+        <h1 class="newsletter__header-title">Sign up for our newsletter</h1>
+        <p class="newsletter__header-subtitle">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint
+          velit officia consequat duis enim
+          velit mollit.</p>
+      </header>
+      <form action="submit" class="newsletter__form" id="newsletterForm">
+        <div class="newsletter__form-input-wrapper">
+          <input type="text" name="first_name" class="newsletter__form-input" placeholder="Your name" minlength="2"
+            required />
+          <input type="text" name="last_name" class="newsletter__form-input" placeholder="Your surname" minlength="2"
+            required />
+          <input type="email" name="email" class="newsletter__form-input" placeholder="Your mail" required />
+          <input type="tel" name="phone" class="newsletter__form-input" id="phoneInput" required />
+          <div class="newsletter__form-callback-wrapper">
+            <label class="newsletter__form-checkbox-container">
+              <input type="checkbox" name="callback" id="callbackCheckbox" class="newsletter__form-checkbox">
+              <span class="checkmark"></span>
+            </label>
+            <label for="callbackCheckbox" class="newsletter__form-callback-text">I give my consent and confirm that I will receive a call from the
+              company's financial advisor after registration.</>
+          </div>
+        </div>
+        <button type="submit" class="newsletter__form-submit-button">REGISTRATE</button>
+      </form>
+    </section>
+  </div>
+  <script src="js/menuToggle.js"></script>
+  <script src="js/validateForm.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+  <script>
+    const input = document.querySelector("input[name='phone']");
+    window.intlTelInput(input, {
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+    });
+  </script>
+</body>
+
+</html>

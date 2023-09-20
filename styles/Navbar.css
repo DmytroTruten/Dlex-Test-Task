@@ -1,0 +1,190 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+  height: 104px;
+}
+
+.navbar__inner-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  width: 88px;
+  height: 36px;
+}
+
+.navbar__menu-button,
+.navbar__offcanvas-close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: transparent;
+  border: none;
+}
+
+.navbar__offcanvas {
+  position: fixed;
+  width: 400px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  visibility: hidden;
+  background-color: #fff;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+.navbar__offcanvas.visible {
+  visibility: visible;
+  transform: translateX(0);
+}
+.navbar__offcanvas.hiding {
+  transform: translateX(100%);
+}
+
+.navbar__backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.navbar__backdrop.visible {
+  display: block;
+}
+.navbar__backdrop.hidden {
+  display: none;
+}
+
+.navbar__offcanvas-header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 104px;
+  padding: 0px 16px;
+}
+
+.navbar__offcanvas-close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.navbar__offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-evenly;
+  padding: 0px 16px;
+}
+
+.navbar__offcanvas-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+}
+
+.navbar__offcanvas-item {
+  font-size: 24px;
+  text-align: center;
+}
+
+.navbar__offcanvas-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 8px;
+}
+
+.navbar__offcanvas-sign-button {
+  display: flex;
+  padding: 8px 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: #444bd3;
+  border: none;
+  color: #fff;
+}
+
+.navbar__offcanvas-sign-button_transparent {
+  background-color: transparent;
+  color: #121127;
+}
+
+@media (min-width: 992px) {
+  .navbar__inner-container {
+    justify-content: initial;
+    gap: 40px;
+  }
+  .navbar__offcanvas {
+    position: relative;
+    width: 100%;
+    top: initial;
+    bottom: initial;
+    right: initial;
+    z-index: initial;
+    flex-direction: row;
+    max-width: initial;
+    visibility: visible;
+    transition: initial;
+    transform: initial;
+  }
+  .navbar__offcanvas-body {
+    padding: 0;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .navbar__offcanvas-list {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+  .navbar__offcanvas-item {
+    font-size: 16px;
+    height: -moz-min-content;
+    height: min-content;
+    cursor: pointer;
+  }
+  .navbar__offcanvas-buttons-wrapper {
+    flex-direction: row;
+    padding: 0px;
+    gap: 8px;
+  }
+  .navbar__offcanvas-sign-button {
+    box-sizing: border-box;
+  }
+  .navbar__offcanvas-header,
+  .navbar__menu-button {
+    display: none;
+  }
+}
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hiding {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
