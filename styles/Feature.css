@@ -44,7 +44,7 @@
 
 .feature__button-text {
   color: #fff;
-  text-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .feature__iphone-aside {
