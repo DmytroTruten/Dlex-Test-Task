@@ -2,7 +2,7 @@ const form = document.getElementById("newsletterForm");
 const firstNameInput = form.querySelector('input[name="first_name"]');
 const lastNameInput = form.querySelector('input[name="last_name"]');
 const emailInput = form.querySelector('input[name="email"]');
-const phoneInput = form.querySelector("#phoneInput");
+const phoneInput = form.querySelector("input[name='phone']");
 const callbackCheckbox = form.querySelector("#callbackCheckbox");
 
 // Function for checking email validity
@@ -13,11 +13,11 @@ function isValidEmail(email) {
 
 // Function for checking phone validity
 function isValidPhone() {
-  // Getting the current value of the input field
-  const phoneNumber = iti.getNumber();
 
   // Checking the validity of the phone number
-  return phoneNumber && phoneNumber.isValid();
+  const isValid = iti.isValidNumber();
+
+  return isValid;
 }
 
 // Function to highlight fields with errors
@@ -54,9 +54,10 @@ form.addEventListener("submit", (e) => {
     !isValidEmail(emailInput.value) ||
     !isValidPhone()
   ) {
-    e.preventDefault();
     alert("Please, set all fields correctly");
+    e.preventDefault();
   } else {
-    alert("You filled out the form")
+    alert("You filled out the form");
+    e.preventDefault();
   }
 });

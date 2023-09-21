@@ -101,7 +101,8 @@
               <input type="checkbox" name="callback" id="callbackCheckbox" class="newsletter__form-checkbox">
               <span class="checkmark"></span>
             </label>
-            <label for="callbackCheckbox" class="newsletter__form-callback-text">I give my consent and confirm that I will receive a call from the
+            <label for="callbackCheckbox" class="newsletter__form-callback-text">I give my consent and confirm that I
+              will receive a call from the
               company's financial advisor after registration.</>
           </div>
         </div>
@@ -109,15 +110,16 @@
       </form>
     </section>
   </div>
-  <script src="js/menuToggle.js"></script>
-  <script src="js/validateForm.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
   <script>
-    const input = document.querySelector("input[name='phone']");
+    const input = document.querySelector('#phoneInput');
     window.intlTelInput(input, {
       utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
     });
+    const iti = intlTelInput(input)
   </script>
+    <script src="js/menuToggle.js"></script>
+    <script src="js/validateForm.js"></script>
 </body>
 
 </html>
