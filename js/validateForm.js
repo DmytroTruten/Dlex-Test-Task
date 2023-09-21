@@ -13,6 +13,20 @@ const errorMap = [
   "Invalid number",
 ];
 
+// Function for checking first name validity
+function isValidFirstName(firstName) {
+  const isValidLength = firstName.length >= 2;
+  const isValidPattern = /^[a-zA-Z]+$/.test(firstName);
+  return isValidLength && isValidPattern;
+}
+
+// Function for checking last name validity
+function isValidLastName(lastName) {
+  const isValidLength = lastName.length >= 2;
+  const isValidPattern = /^[a-zA-Z]+$/.test(lastName);
+  return isValidLength && isValidPattern;
+}
+
 // Function for checking email validity
 function isValidEmail(email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -101,10 +115,14 @@ phoneInput.addEventListener("input", () => {
 
 // Form submission handler
 form.addEventListener("submit", (e) => {
+  const firstName = firstNameInput.value;
+  const lastName = lastNameInput.value;
+  const email = emailInput.value;
+
   if (
-    firstNameInput.value.length < 2 ||
-    lastNameInput.value.length < 2 ||
-    !isValidEmail(emailInput.value) ||
+    !isValidFirstName(firstName) ||
+    !isValidLastName(lastName) ||
+    !isValidEmail(email) ||
     !isValidPhone()
   ) {
     e.preventDefault();
