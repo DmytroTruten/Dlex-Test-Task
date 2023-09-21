@@ -59,6 +59,14 @@
   border: 1px solid #e0e3eb;
 }
 
+.newsletter__form-input:focus {
+  outline: none;
+}
+
+.error-message {
+  color: red;
+}
+
 .newsletter__form-callback-wrapper {
   display: flex;
   gap: 8px;

@@ -91,14 +91,22 @@
       <form action="submit" class="newsletter__form" id="newsletterForm">
         <div class="newsletter__form-input-wrapper">
           <input type="text" name="first_name" class="newsletter__form-input" placeholder="Your name" minlength="2"
-            required />
+            required/>
+          <span class="error-message" id="first_name-error"></span>
+
           <input type="text" name="last_name" class="newsletter__form-input" placeholder="Your surname" minlength="2"
-            required />
+            required/>
+          <span class="error-message" id="last_name-error"></span>
+
           <input type="email" name="email" class="newsletter__form-input" placeholder="Your mail" required />
+          <span class="error-message" id="email-error"></span>
+
           <input type="tel" name="phone" class="newsletter__form-input" id="phoneInput" required />
+          <span class="error-message" id="phone-error"></span>
+
           <div class="newsletter__form-callback-wrapper">
             <label class="newsletter__form-checkbox-container">
-              <input type="checkbox" name="callback" id="callbackCheckbox" class="newsletter__form-checkbox">
+              <input type="checkbox" name="callback" id="callback-сheckbox" class="newsletter__form-checkbox">
               <span class="checkmark"></span>
             </label>
             <label for="callbackCheckbox" class="newsletter__form-callback-text">I give my consent and confirm that I
@@ -106,7 +114,7 @@
               company's financial advisor after registration.</>
           </div>
         </div>
-        <button type="submit" class="newsletter__form-submit-button">REGISTRATE</button>
+        <button type="submit" class="newsletter__form-submit-button">REGISTER</button>
       </form>
     </section>
   </div>
@@ -114,12 +122,19 @@
   <script>
     const input = document.querySelector('#phoneInput');
     window.intlTelInput(input, {
-      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js",
+      initialCountry: "auto",
+      geoIpLookup: callback => {
+        fetch("https://ipapi.co/json")
+          .then(res => res.json())
+          .then(data => callback(data.country_code))
+          .catch(() => callback("us"));
+      },
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/utils.js"
     });
     const iti = intlTelInput(input)
   </script>
-    <script src="js/menuToggle.js"></script>
-    <script src="js/validateForm.js"></script>
+  <script src="js/menuToggle.js"></script>
+  <script src="js/validateForm.js"></script>
 </body>
 
 </html>
