@@ -91,6 +91,10 @@
   text-transform: uppercase;
 }
 
+.iti {
+  width: 100%;
+}
+
 .iti__selected-flag {
   gap: 8px;
   padding: 0px 8px 0px 22px !important;
@@ -109,11 +113,11 @@
 }
 
 .iti--allow-dropdown input,
-.iti--allow-dropdown input[type=text],
-.iti--allow-dropdown input[type=tel],
+.iti--allow-dropdown input[type="text"],
+.iti--allow-dropdown input[type="tel"],
 .iti--separate-dial-code input,
-.iti--separate-dial-code input[type=text],
-.iti--separate-dial-code input[type=tel] {
+.iti--separate-dial-code input[type="text"],
+.iti--separate-dial-code input[type="tel"] {
   padding-left: 96px !important;
 }
 
