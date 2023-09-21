@@ -24,7 +24,7 @@ function isValidPhone() {
   const inputValue = phoneInput.value.trim();
 
   if (!/^\d*$/.test(inputValue)) {
-    errorMsg.innerHTML = "Please enter only numbers";
+    highlightField(phoneInput, false, "Please enter only numbers");
     return false;
   }
 
