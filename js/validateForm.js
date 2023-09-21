@@ -21,7 +21,7 @@ function isValidEmail(email) {
 
 // Function for checking email validity
 function isValidPhone() {
-  const inputValue = phoneInput.value.trim(); // Убираем лишние пробелы
+  const inputValue = phoneInput.value.trim();
 
   if (!/^\d*$/.test(inputValue)) {
     errorMsg.innerHTML = "Please enter only numbers";
